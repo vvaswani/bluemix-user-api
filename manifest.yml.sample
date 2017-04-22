@@ -1,0 +1,8 @@
+---
+applications:
+- name: myapp-[initials]
+memory: 256M
+instances: 1
+host: myapp-[initials]
+buildpack: https://github.com/cloudfoundry/php-buildpack.git
+stack: cflinuxfs2

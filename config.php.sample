@@ -1,0 +1,10 @@
+<?php
+// config.php.sample
+$config = [
+  'settings' => [
+    'displayErrorDetails' => true, // disable for production
+    'passport_api_key' => 'PASSPORT-API-KEY',
+    'passport_api_url' => 'PASSPORT-API-URL',
+    'passport_app_id'  => 'PASSPORT-APP-ID',
+  ]
+];

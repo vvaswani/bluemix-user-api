@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- header area -->
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h4 class="pull-left">Home</h4>
+          <div class="btn-group pull-right">
+            <a role="button" class="btn btn-primary" href="<?php echo $data['router']->pathFor('home'); ?>">Home</a>
+          </div>
+        </div>
+      </div>  
+      <!-- header area ends -->
+      
+      <!-- content area -->
+      <?php if (!isset($_POST['submit'])): ?>
+      <div>
+        <form method="post" action="<?php echo $data['router']->pathFor('login'); ?>">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="form-control" id="email" name="email" value="">
+          </div>
+          <div class="form-group">
+            <label for="body">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-default">Submit</button>
+          </div>
+        </form>
+      </div>
+      <?php else: ?>
+      <div>
+        <?php if ($data['user'] !== false): ?>
+        <div class="alert alert-success">
+          <strong>Success!</strong>.
+        </div>
+        <p>You are currently logged in as <strong><?php echo $data['user']->firstName; ?> <?php echo $data['user']->lastName; ?></strong> with email address <strong><?php echo $data['user']->email; ?></strong>.</p>
+        <p>Visit the <a href="<?php echo $data['router']->pathFor('account'); ?>">account information page.</p> 
+        <?php else: ?>
+        <div class="alert alert-danger">
+          <strong>Failure!</strong> Please <a href="<?php echo $data['router']->pathFor('login'); ?>">try again</a>.
+        </div>        
+        <?php endif; ?>
+      </div>        
+      <?php endif; ?>
+      <!-- content area ends-->
+      
+      <!-- footer -->
+      <div class="container">
+        <p class="text-center">
+          <a href="<?php echo $data['router']->pathFor('legal'); ?>" role="button" class="btn btn-default btn">Legal</a>
+        </p>
+      </div> 
+      <!-- footer ends -->
+    </div> 
+
+     
+  </body>
+</html>

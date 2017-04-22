@@ -1,0 +1,7 @@
+{
+    "WEB_SERVER": "httpd",
+    "PHP_EXTENSIONS": ["bz2", "zlib", "curl"],
+    "COMPOSER_VENDOR_DIR": "vendor",
+    "WEBDIR": "public",
+    "PHP_VERSION": "{PHP_56_LATEST}"
+}

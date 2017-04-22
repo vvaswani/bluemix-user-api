@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- header area -->
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h4 class="pull-left">Legal Notices</h4>
+          <div class="btn-group pull-right">
+            <a role="button" class="btn btn-primary" href="<?php echo $data['router']->pathFor('home'); ?>">Home</a>
+          </div>
+        </div>
+      </div>  
+      <!-- header area ends -->
+      
+      <!-- content area -->
+      <ul>
+        <li>This application and its source code is intended for demonstration purposes only and is provided without any warranties or safeguards. Users are hereby warned that they should not store any sensitive or confidential information within it. The application author takes no responsibility or liability for any data loss arising from usage of this application.</li>
+        <li>By using this application and/or its source code, you agree to be bound by the Inversoft License Agreement, available at <a href="https://www.inversoft.com/license">https://www.inversoft.com/license</a> and to comply with (and not knowingly violate) applicable law, regulation, and these terms of use.</li>
+        <li>By using this application and/or its source code, you agree to be bound by the IBM Bluemix Terms of Use, available at <a href="https://console.ng.bluemix.net/docs/navigation/notices.html">https://console.ng.bluemix.net/docs/navigation/notices.html</a> and to comply with (and not knowingly violate) applicable law, regulation, and these terms of use.</li>
+        <li>By using this application and/or its source code, you agree to defend, indemnify and hold harmless the application author, from and against all costs, charges and expenses (including attorneys' fees) arising from any third party claim, action, suit, or proceeding against any action by a third party against the application author.</li>
+      </ul>
+      <!-- content area ends-->
+      
+      <!-- footer -->
+      <div class="container">
+      </div> 
+      <!-- footer ends -->
+    </div> 
+
+     
+  </body>
+</html>

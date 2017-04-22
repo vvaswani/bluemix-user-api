@@ -1,0 +1,7 @@
+{
+    "require": {
+        "slim/slim": "*",
+        "slim/php-view": "*",
+        "guzzlehttp/guzzle": "*"
+    }
+}
