@@ -1,4 +1,4 @@
-# Identity and Access Management Example
+# User Authentication and Management Example
 
 This repository accompanies the IBM developerWorks article. It's built with PHP, Slim 3.x and Bootstrap. It delivers an example application that uses a hosted Passport service instance on Bluemix for user authentication and user account management. 
 
