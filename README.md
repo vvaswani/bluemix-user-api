@@ -17,3 +17,14 @@ To deploy this application to your Bluemix space:
  * Create `manifest.yml` with your custom hostname. Use `manifest.yml.sample` as an example.
  * Push the application to Bluemix and bind the Passport service to it, as described in the article.
  * Define the application ID as an environment variable for your Bluemix application, as described in the article.
+ 
+## Application routes
+
+ * `/home` - Public page, accessible to all
+ * `/account` - Private page, accessible to logged-in users only
+ * `/login` - Login page
+ * `/logout` - Logout page
+ * `/admin/users/index` - User list
+ * `/admin/users/save` - User creation form
+ * `/admin/users/activate/UID` - User activation page
+ * `/admin/users/deactivate/UID` - User deactivation page
