@@ -40,13 +40,17 @@
               <th>Name</th>
               <th>Email address</th>
               <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
         <?php foreach ($data['active-users'] as $user): ?>
           <tr>
             <td><?php echo $user->firstName; ?> <?php echo $user->lastName; ?></td>
             <td><?php echo $user->email; ?></td>
+            <td><a href="<?php echo $data['router']->pathFor('admin-users-save', array('id' => $user->id)); ?>" class="btn btn-primary">Edit</a></td> 
             <td><a href="<?php echo $data['router']->pathFor('admin-users-deactivate', array('id' => $user->id)); ?>" class="btn btn-danger">Deactivate</a></td> 
+            <td><a href="<?php echo $data['router']->pathFor('admin-users-delete', array('id' => $user->id)); ?>" class="btn btn-danger">Delete</a></td> 
           </tr>
         <?php endforeach; ?>
         </table>
@@ -70,13 +74,15 @@
               <th>Name</th>
               <th>Email address</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
         <?php foreach ($data['inactive-users'] as $user): ?>
           <tr>
             <td><?php echo $user->firstName; ?> <?php echo $user->lastName; ?></td>
             <td><?php echo $user->email; ?></td>
-            <td><a href="<?php echo $data['router']->pathFor('admin-users-activate', array('id' => $user->id)); ?>" class="btn btn-success">Activate</a></td> 
+            <td><a href="<?php echo $data['router']->pathFor('admin-users-activate', array('id' => $user->id)); ?>" class="btn btn-success">Activate</a></td>
+            <td><a href="<?php echo $data['router']->pathFor('admin-users-delete', array('id' => $user->id)); ?>" class="btn btn-danger">Delete</a></td>             
           </tr>
         <?php endforeach; ?>
         </table>

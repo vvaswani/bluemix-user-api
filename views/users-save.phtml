@@ -30,33 +30,53 @@
       
       <!-- content area -->
       <div>
-        <?php if (!isset($_POST['submit'])): ?>      
+      <?php if (!isset($_POST['submit'])): ?>
         <form method="post" action="<?php echo $data['router']->pathFor('admin-users-save'); ?>">
+          <input name="id" type="hidden" value="<?php echo (isset($data['user']->id)) ? $data['user']->id : ''; ?>" />
           <div class="form-group">
             <label for="fname">First name</label>
-            <input type="text" class="form-control" id="fname" name="fname">
+            <input type="text" class="form-control" id="fname" name="fname" value="<?php echo (isset($data['user']->firstName)) ? $data['user']->firstName : ''; ?>">
           </div>
           <div class="form-group">
             <label for="lname">Last name</label>
-            <input type="text" class="form-control" id="lname" name="lname">
+            <input type="text" class="form-control" id="lname" name="lname" value="<?php echo (isset($data['user']->lastName)) ? $data['user']->lastName : ''; ?>">
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <input type="text" class="form-control" id="email" name="email" value="<?php echo (isset($data['user']->email)) ? $data['user']->email : ''; ?>">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password">
-          </div> 
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" value="<?php echo (isset($data['user']->data->attributes->city)) ? $data['user']->data->attributes->city : ''; ?>">
+          </div>
+          <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <input type="text" class="form-control" id="occupation" name="occupation" value="<?php echo (isset($data['user']->data->attributes->occupation)) ? $data['user']->data->attributes->occupation : ''; ?>">
+          </div>
+          <div class="form-group">
+            <label for="mobilePhone">Mobile phone (with country code)</label>
+            <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo (isset($data['user']->mobilePhone)) ? $data['user']->mobilePhone : ''; ?>">
+          </div>
+          <div class="form-group">
+            <label for="tier">Membership tier</label>
+            <select class="form-control" id="tier" name="tier">
+              <option value="1" <?php echo !empty($data['user']) && ($data['user']->registrations[0]->roles[0] == 'member-gold') ? 'selected="selected"' : ''; ?>>Gold</option>
+              <option value="2" <?php echo !empty($data['user']) && ($data['user']->registrations[0]->roles[0] == 'member-silver') ? 'selected="selected"' : ''; ?>>Silver</option>
+            </select>
+          </div>          
           <div class="form-group">
             <button type="submit" name="submit" class="btn btn-default">Save</button>
           </div>
         </form>  
       <?php else: ?>
         <div class="alert alert-success">
-          <strong>Success!</strong> The user with identifier <strong><?php echo $data['user']->id; ?></strong> was successfully created. <a role="button" class="btn btn-primary" href="<?php echo $data['router']->pathFor('admin-users-save'); ?>">Add another?</a>
+          <strong>Success!</strong> The user with identifier <strong><?php echo $data['user']->id; ?></strong> was successfully created or updated. <a role="button" class="btn btn-primary" href="<?php echo $data['router']->pathFor('admin-users-save'); ?>">Add another?</a>
         </div>
-      <?php endif; ?>      
+      <?php endif; ?> 
       </div>        
       <!-- content area ends-->
       

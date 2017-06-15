@@ -24,7 +24,12 @@ To deploy this application to your Bluemix space:
  * `/account` - Private page, accessible to logged-in users only
  * `/login` - Login page
  * `/logout` - Logout page
+ * `/password-request` - Password recovery page
+ * `/password-reset` - Password reset page
  * `/admin/users/index` - User list
- * `/admin/users/save` - User creation form
+ * `/admin/users/save` - User creation/modification form
+ * `/admin/users/delete` - User deletion page
  * `/admin/users/activate/UID` - User activation page
  * `/admin/users/deactivate/UID` - User deactivation page
+ * `/members/gold` - Private page, restricted to users with role "member-gold" 
+ * `/members/silver` - Private page, restricted to users with role "member-silver" 
