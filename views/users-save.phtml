@@ -64,8 +64,8 @@
           <div class="form-group">
             <label for="tier">Membership tier</label>
             <select class="form-control" id="tier" name="tier">
-              <option value="1" <?php echo !empty($data['user']) && ($data['user']->registrations[0]->roles[0] == 'member-gold') ? 'selected="selected"' : ''; ?>>Gold</option>
-              <option value="2" <?php echo !empty($data['user']) && ($data['user']->registrations[0]->roles[0] == 'member-silver') ? 'selected="selected"' : ''; ?>>Silver</option>
+              <option value="1" <?php echo !empty($data['user']) && !empty($data['user']->registrations[0]->roles) && ($data['user']->registrations[0]->roles[0] == 'member-gold') ? 'selected="selected"' : ''; ?>>Gold</option>
+              <option value="2" <?php echo !empty($data['user']) && !empty($data['user']->registrations[0]->roles) && ($data['user']->registrations[0]->roles[0] == 'member-silver') ? 'selected="selected"' : ''; ?>>Silver</option>
             </select>
           </div>          
           <div class="form-group">

@@ -235,12 +235,14 @@ $app->get('/admin/users/index', function (Request $request, Response $response) 
     $body = json_decode($json);
 
     $activeUsers = [];
-    $inactiveUsers = [];      
-    foreach ($body->users as $user) {
-      if ($user->active == 1) {
-        $activeUsers[] = $user;
-      } else {
-        $inactiveUsers[] = $user;
+    $inactiveUsers = [];   
+    if (isset($body->users)) {
+      foreach ($body->users as $user) {
+        if ($user->active == 1) {
+          $activeUsers[] = $user;
+        } else {
+          $inactiveUsers[] = $user;
+        }
       }
     }
     
